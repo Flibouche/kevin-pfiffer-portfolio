@@ -21,7 +21,7 @@ const projects = [
         title: 'Who Can Play',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nunc nec ultricies.',
         stack: [{ name: "Html 5" }, { name: "Css 3" }, { name: "Javascript" }],
-        image: '/assets/work/sf-whocanplay.png',
+        image: '/assets/work/sf-whocanplay.webp',
         live: '',
         github: '',
     },
@@ -31,7 +31,7 @@ const projects = [
         title: 'CO2M',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nunc nec ultricies.',
         stack: [{ name: "Html 5" }, { name: "Css 3" }, { name: "Javascript" }],
-        image: '/assets/work/co2m.png',
+        image: '/assets/work/co2m.webp',
         live: '',
         github: '',
     },
@@ -41,7 +41,7 @@ const projects = [
         title: 'MERN Blog',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nunc nec ultricies.',
         stack: [{ name: "Html 5" }, { name: "Css 3" }, { name: "Javascript" }],
-        image: '/assets/work/mern-blog.png',
+        image: '/assets/work/mern-blog.webp',
         live: '',
         github: '',
     },
@@ -51,7 +51,7 @@ const projects = [
         title: '2D Portfolio',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nunc nec ultricies.',
         stack: [{ name: "Html 5" }, { name: "Css 3" }, { name: "Javascript" }],
-        image: '/assets/work/2d-portfolio.png',
+        image: '/assets/work/2d-portfolio.webp',
         live: '',
         github: '',
     },
@@ -61,7 +61,7 @@ const projects = [
         title: 'Sessions',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nunc nec ultricies.',
         stack: [{ name: "Html 5" }, { name: "Css 3" }, { name: "Javascript" }],
-        image: '/assets/work/sf-sessions.png',
+        image: '/assets/work/sf-sessions.webp',
         live: '',
         github: '',
     },
@@ -71,7 +71,7 @@ const projects = [
         title: 'CineDune',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nunc nec ultricies.',
         stack: [{ name: "Html 5" }, { name: "Css 3" }, { name: "Javascript" }],
-        image: '/assets/work/cinedune.png',
+        image: '/assets/work/cinedune.webp',
         live: '',
         github: '',
     },
@@ -155,7 +155,7 @@ const Work = () => {
                         <Swiper
                             spaceBetween={30}
                             slidesPerView={1}
-                            className='xl:h-520px] mb-12'
+                            className='xl:h-[520px] mb-12'
                             onSlideChange={handleSlideChange}
                         >
                             {projects.map((project, index) => {
