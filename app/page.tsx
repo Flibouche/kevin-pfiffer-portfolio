@@ -1,10 +1,10 @@
-import { FiDownload } from 'react-icons/fi';
+import { FiDownload } from "react-icons/fi";
 
 // Components
 import { Button } from "@/components/ui/button";
 import Social from "@/components/Social";
-import Photo from '@/components/Photo';
-import Stats from '@/components/Stats';
+import Photo from "@/components/Photo";
+import Stats from "@/components/Stats";
 
 const Home = () => {
     return (
@@ -26,10 +26,16 @@ const Home = () => {
                             <Button
                                 variant="outline"
                                 size="lg"
-                                className="uppercase flex items-center gap-2"
+                                className="uppercase"
                             >
-                                <span>Télécharger mon CV</span>
-                                <FiDownload className="text-xl" />
+                                <a
+                                    href="/assets/CV_Kevin_PFIFFER_2024.pdf"
+                                    download={true}
+                                    className='flex items-center gap-2'
+                                >
+                                    <span>Télécharger mon CV</span>
+                                    <FiDownload className="text-xl" />
+                                </a>
                             </Button>
                             <div className="mb-8 xl:mb-0">
                                 <Social
