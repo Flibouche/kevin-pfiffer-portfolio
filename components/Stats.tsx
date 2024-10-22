@@ -12,9 +12,13 @@ const stats = [
         text: "Code commits",
     },
     {
+        num: 100,
+        text: "% de motivation",
+    },
+    {
         num: 4,
         text: "Cafés par jour",
-    }
+    },
 ]
 
 const Stats = () => {
