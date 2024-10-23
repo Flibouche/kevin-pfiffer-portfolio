@@ -4,27 +4,20 @@ import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { CiMenuFries } from 'react-icons/ci';
+import { Button } from './ui/button';
 
 const links = [
     {
-        name: 'home',
+        name: 'À propos',
         path: '/'
     },
     {
-        name: 'services',
-        path: '/services'
-    },
-    {
-        name: 'resume',
+        name: 'résumé',
         path: '/resume'
     },
     {
-        name: 'work',
+        name: 'projets',
         path: '/work'
-    },
-    {
-        name: 'contact',
-        path: '/contact'
     },
 ];
 
@@ -57,6 +50,11 @@ const MobileNav = () => {
                             </Link>
                         );
                     })}
+                    <div className="items-center gap-8">
+                        <Link href="/contact">
+                            <Button className='text-xl'>Contactez-moi</Button>
+                        </Link>
+                    </div>
                 </nav>
             </SheetContent>
         </Sheet>

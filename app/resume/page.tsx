@@ -186,7 +186,7 @@ const skills = {
     ]
 }
 
-const softSkills = {
+const transversalSkills = {
     title: 'Mes compétences transversales',
     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
     skillModeling: [
@@ -261,7 +261,7 @@ const Resume = () => {
                         <TabsTrigger value="experience">Expériences</TabsTrigger>
                         <TabsTrigger value="education">Formations</TabsTrigger>
                         <TabsTrigger value="skills">Hard skills</TabsTrigger>
-                        <TabsTrigger value="soft">Soft skills</TabsTrigger>
+                        <TabsTrigger value="transversal">Tranversal skills</TabsTrigger>
                         <TabsTrigger value="about">À propos de moi</TabsTrigger>
                     </TabsList>
 
@@ -487,7 +487,7 @@ const Resume = () => {
                         </TabsContent>
 
                         {/* Soft */}
-                        <TabsContent value='soft' className='w-full h-full'>
+                        <TabsContent value='transversal' className='w-full h-full'>
                             <div className='flex flex-col gap-[30px]'>
                                 <div className='flex flex-col gap-[30px] text-center xl:text-left'>
                                     <h3 className='text-4xl font-bold'>{skills.title}</h3>
@@ -505,7 +505,7 @@ const Resume = () => {
                                     {/* Modeling */}
                                     <h4>Maquettage :</h4>
                                     <ul className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap-[30px]'>
-                                        {softSkills.skillModeling.map((skill, index) => {
+                                        {transversalSkills.skillModeling.map((skill, index) => {
                                             return (
                                                 <li key={index}>
                                                     <TooltipProvider delayDuration={100}>
@@ -525,7 +525,7 @@ const Resume = () => {
                                     {/* Organization */}
                                     <h4>Organisation :</h4>
                                     <ul className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap-[30px]'>
-                                        {softSkills.skillOrganization.map((skill, index) => {
+                                        {transversalSkills.skillOrganization.map((skill, index) => {
                                             return (
                                                 <li key={index}>
                                                     <TooltipProvider delayDuration={100}>
@@ -545,7 +545,7 @@ const Resume = () => {
                                     {/* Visual */}
                                     <h4>Visuel :</h4>
                                     <ul className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap-[30px]'>
-                                        {softSkills.skillVisual.map((skill, index) => {
+                                        {transversalSkills.skillVisual.map((skill, index) => {
                                             return (
                                                 <li key={index}>
                                                     <TooltipProvider delayDuration={100}>
@@ -565,7 +565,7 @@ const Resume = () => {
                                     {/* Communication */}
                                     <h4>Communication :</h4>
                                     <ul className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap-[30px]'>
-                                        {softSkills.skillCommunication.map((skill, index) => {
+                                        {transversalSkills.skillCommunication.map((skill, index) => {
                                             return (
                                                 <li key={index}>
                                                     <TooltipProvider delayDuration={100}>
