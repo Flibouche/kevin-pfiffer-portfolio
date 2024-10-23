@@ -15,7 +15,8 @@ import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
 
 // About data
 const about = {
-    title: 'A propos de moi',
+    icon: '/assets/resume/user.svg',
+    title: 'À propos de moi',
     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam corporis quidem dolore perspiciatis debitis animi nihil culpa voluptate, ut illo.',
     info: [
         {
@@ -106,6 +107,7 @@ const education = {
 
 // Skills data
 const skills = {
+    icon: '/assets/resume/gear.svg',
     title: 'Mes compétences',
     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
     skillStructureAndStyle: [
@@ -187,6 +189,7 @@ const skills = {
 }
 
 const transversalSkills = {
+    icon: '/assets/resume/gears.svg',
     title: 'Mes compétences transversales',
     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
     skillModeling: [
@@ -270,8 +273,8 @@ const Resume = () => {
                         {/* Experience */}
                         <TabsContent value='experience' className='w-full'>
                             <div className='flex flex-col gap-[30px] text-center xl:text-left'>
-                                <div className='flex justify-center xl:justify-start gap-3'>
-                                    <img src={experience.icon} alt="Experience Icon" className='h-10 w-10' />
+                                <div className='flex flex-col justify-center xl:flex-row xl:justify-start gap-3'>
+                                    <img src={experience.icon} alt="Experience Icon" className='h-10' />
                                     <h3 className='text-4xl font-bold'>{experience.title}</h3>
                                 </div>
                                 <p className='max-w-[600px] text-white/60 mx-auto xl:mx-0'>
@@ -309,8 +312,8 @@ const Resume = () => {
                         {/* Education */}
                         <TabsContent value='education' className='w-full'>
                             <div className='flex flex-col gap-[30px] text-center xl:text-left'>
-                                <div className='flex justify-center xl:justify-start gap-3'>
-                                    <img src={education.icon} alt="Experience Icon" className='h-10 w-10' />
+                                <div className='flex flex-col justify-center xl:flex-row xl:justify-start gap-3'>
+                                    <img src={education.icon} alt="Education Icon" className='h-10' />
                                     <h3 className='text-4xl font-bold'>{education.title}</h3>
                                 </div>
                                 <p className='max-w-[600px] text-white/60 mx-auto xl:mx-0'>
@@ -349,7 +352,10 @@ const Resume = () => {
                         <TabsContent value='skills' className='w-full h-full'>
                             <div className='flex flex-col gap-[30px]'>
                                 <div className='flex flex-col gap-[30px] text-center xl:text-left'>
-                                    <h3 className='text-4xl font-bold'>{skills.title}</h3>
+                                    <div className='flex flex-col justify-center xl:flex-row xl:justify-start gap-3'>
+                                        <img src={skills.icon} alt="Hard Skills Icon" className='h-10' />
+                                        <h3 className='text-4xl font-bold'>{skills.title}</h3>
+                                    </div>
                                     <p className='max-w-[600px] text-white/60 mx-auto xl:mx-0'>{skills.description}</p>
                                 </div>
                                 <ScrollArea className="h-[400px]">
@@ -486,12 +492,15 @@ const Resume = () => {
                             </div>
                         </TabsContent>
 
-                        {/* Soft */}
+                        {/* Transversal skills */}
                         <TabsContent value='transversal' className='w-full h-full'>
                             <div className='flex flex-col gap-[30px]'>
                                 <div className='flex flex-col gap-[30px] text-center xl:text-left'>
-                                    <h3 className='text-4xl font-bold'>{skills.title}</h3>
-                                    <p className='max-w-[600px] text-white/60 mx-auto xl:mx-0'>{skills.description}</p>
+                                    <div className='flex flex-col justify-center xl:flex-row xl:justify-start gap-3'>
+                                        <img src={transversalSkills.icon} alt="Transerval Skills Icon" className='h-10' />
+                                        <h3 className='text-4xl font-bold'>{transversalSkills.title}</h3>
+                                    </div>
+                                    <p className='max-w-[600px] text-white/60 mx-auto xl:mx-0'>{transversalSkills.description}</p>
                                 </div>
                                 <ScrollArea className="h-[400px]">
                                     <motion.div animate={{ rotate: [0, 0.7, 0, 0] }}
@@ -589,7 +598,10 @@ const Resume = () => {
                         {/* About */}
                         <TabsContent value='about' className='w-full text-center xl:text-left'>
                             <div className='flex flex-col gap-[30px]'>
-                                <h3 className='text-4xl font-bold'>{about.title}</h3>
+                                <div className='flex flex-col justify-center xl:flex-row xl:justify-start gap-3'>
+                                    <img src={about.icon} alt="About Me Icon" className='h-10' />
+                                    <h3 className='text-4xl font-bold'>{about.title}</h3>
+                                </div>
                                 <p className='max-w-[600px] text-white/60 mx-auto xl:mx-0'>{about.description}</p>
                                 <ul className='grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[620px] mx-auto xl:mx-0'>
                                     {about.info.map((item, index) => {
