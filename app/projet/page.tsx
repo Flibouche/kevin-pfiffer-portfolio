@@ -22,7 +22,7 @@ const projects = [
         description: "Who Can Play est une initiative née d'un projet de fin d'études visant à démocratiser l'accès aux jeux vidéo pour les personnes en situation de handicap. Le projet repose sur une plateforme communautaire dont l'essence même dépend de l'implication active de ses utilisateurs.",
         stack: [{ name: "Symfony" }, { name: "TailwindCSS" }, { name: "JavaScript" }],
         image: '/assets/work/sf-whocanplay.webp',
-        live: 'qsd',
+        live: '',
         github: 'https://github.com/Flibouche/WhoCanPlay',
     },
     {
