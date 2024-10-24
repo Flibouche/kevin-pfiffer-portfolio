@@ -42,7 +42,7 @@ const projects = [
         description: "Ce projet est une application de blog avec tableau de bord utilisant la stack MERN (MongoDB, Express.js, React.js et Node.js) et suit les étapes décrites d'un tutoriel Youtube.",
         stack: [{ name: "MongoDB" }, { name: "ExpressJS" }, { name: "React" }, { name: "NodeJS" }],
         image: '/assets/work/mern-blog.webp',
-        live: '',
+        live: 'https://blog-mern-stack-tdgw.onrender.com/',
         github: 'https://github.com/Flibouche/Blog-MERN-Stack',
     },
     {
