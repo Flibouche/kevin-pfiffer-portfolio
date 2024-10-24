@@ -1,33 +1,55 @@
 "use client";
 
+import { useRef } from "react";
+import { motion } from "framer-motion";
+import emailjs from 'emailjs-com';
+
+// Icons
+import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
+
+// Components
+import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "@/components/ui/select";
-
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 
 const info = [
     {
         icon: <FaPhoneAlt />,
         title: 'Téléphone',
-        description: '06 06 06 06 06'
+        description: '06 69 53 77 87'
     },
     {
         icon: <FaEnvelope />,
         title: 'Email',
-        description: 'youremail@gmail.com'
+        description: 'kevin.pfiffer2@gmail.com'
     },
     {
         icon: <FaMapMarkerAlt />,
-        title: 'Addresse',
-        description: 'Code Corder, Tech Town 13579'
+        title: 'Localisation',
+        description: 'Strasbourg'
     },
 ];
 
-import { motion } from "framer-motion";
-
 const Contact = () => {
+    const form = useRef<HTMLFormElement | null>(null);
+
+    const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+
+        if (form.current) {
+            emailjs
+                .sendForm('service_y3rr1zg', 'template_bxvz90w', form.current, 'ScuE2nS3m1Twxa2LR')
+                .then(
+                    () => {
+                        console.log('SUCCESS!');
+                    },
+                    (error) => {
+                        console.log('FAILED...', error.text);
+                    },
+                );
+        }
+    };
+
     return (
         <motion.section
             initial={{ opacity: 0 }}
@@ -41,36 +63,21 @@ const Contact = () => {
                 <div className="flex flex-col xl:flex-row gap-[30px]">
                     {/* Form */}
                     <div className="xl:w-[54%] order-2 xl:order-none">
-                        <form className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl">
+                        <form ref={form} onSubmit={sendEmail} className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl">
                             <h3 className="text-4xl text-accent">Envoyez-moi un message !</h3>
-                            <p className="text-white/60">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            <p className="text-white/60">Je suis ouvert aux propositions d'alternance pour le titre de Concepteur Développeur d'Applications ou aux propositions d'emplois.</p>
                             {/* Input */}
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <Input type="firstname" placeholder="Firstname" />
-                                <Input type="lastname" placeholder="Lastname" />
-                                <Input type="email" placeholder="Email address" />
+                            <div className="flex flex-col gap-6">
+                                <Input type="name" placeholder="Quel est votre nom ?" />
+                                <Input type="email" placeholder="Quelle est votre adresse email ?" />
                             </div>
-                            {/* Select */}
-                            <Select>
-                                <SelectTrigger className="w-full">
-                                    <SelectValue placeholder="Select a service"></SelectValue>
-                                </SelectTrigger>
-                                <SelectContent>
-                                    <SelectGroup>
-                                        <SelectLabel>Select a service</SelectLabel>
-                                        <SelectItem value="est">Web Development</SelectItem>
-                                        <SelectItem value="cst">UI/UX Design</SelectItem>
-                                        <SelectItem value="mst">Logo Design</SelectItem>
-                                    </SelectGroup>
-                                </SelectContent>
-                            </Select>
                             {/* Textarea */}
                             <Textarea
                                 className="h-[200px]"
-                                placeholder="Type your message here."
+                                placeholder="Que voulez-vous me dire ?"
                             />
                             {/* Buttons */}
-                            <Button size="md" className="max-w-40">Envoyer</Button>
+                            <Button size="md" className="max-w-40" type="submit" value="Send">Envoyer</Button>
                         </form>
                     </div>
                     {/* Info */}
