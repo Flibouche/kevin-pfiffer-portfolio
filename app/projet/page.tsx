@@ -19,61 +19,61 @@ const projects = [
         num: '01',
         category: 'fullstack',
         title: 'Who Can Play',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nunc nec ultricies.',
-        stack: [{ name: "Html 5" }, { name: "Css 3" }, { name: "Javascript" }],
+        description: "Who Can Play est une initiative née d'un projet de fin d'études visant à démocratiser l'accès aux jeux vidéo pour les personnes en situation de handicap. Le projet repose sur une plateforme communautaire dont l'essence même dépend de l'implication active de ses utilisateurs.",
+        stack: [{ name: "Symfony" }, { name: "TailwindCSS" }, { name: "JavaScript" }],
         image: '/assets/work/sf-whocanplay.webp',
-        live: '',
-        github: '',
+        live: 'qsd',
+        github: 'https://github.com/Flibouche/WhoCanPlay',
     },
     {
         num: '02',
         category: 'frontend',
         title: 'CO2M',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nunc nec ultricies.',
-        stack: [{ name: "Html 5" }, { name: "Css 3" }, { name: "Javascript" }],
+        description: "Ce projet a été développé lors de mon stage et consiste en la création d'une landing page pour l'entreprise CO2M. L'objectif de ce projet était d'explorer et de mettre en œuvre de nouvelles technologies avec lesquelles je n'avais pas encore travaillé en profondeur.",
+        stack: [{ name: "React" }, { name: "TailwindCSS" }, { name: "GSAP" }, { name: "TypeScript" }],
         image: '/assets/work/co2m.webp',
-        live: '',
-        github: '',
+        live: 'https://co2m.vercel.app/',
+        github: 'https://github.com/Flibouche/co2m',
     },
     {
         num: '03',
         category: 'fullstack',
         title: 'MERN Blog',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nunc nec ultricies.',
-        stack: [{ name: "Html 5" }, { name: "Css 3" }, { name: "Javascript" }],
+        description: "Ce projet est une application de blog avec tableau de bord utilisant la stack MERN (MongoDB, Express.js, React.js et Node.js) et suit les étapes décrites d'un tutoriel Youtube.",
+        stack: [{ name: "MongoDB" }, { name: "ExpressJS" }, { name: "React" }, { name: "NodeJS" }],
         image: '/assets/work/mern-blog.webp',
         live: '',
-        github: '',
+        github: 'https://github.com/Flibouche/Blog-MERN-Stack',
     },
     {
         num: '04',
-        category: 'fullstack',
+        category: 'frontend',
         title: '2D Portfolio',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nunc nec ultricies.',
-        stack: [{ name: "Html 5" }, { name: "Css 3" }, { name: "Javascript" }],
+        description: "J'ai suivi le tutoriel de FreeCodeCamp 'Build a Dev Portfolio as a 2D Game - JavaScript Course' et j'ai décidé de l'améliorer visuellement pour le personnaliser selon mes préférences.",
+        stack: [{ name: "KaboomJS" }, { name: "ViteJS" }, { name: "Tiled" }],
         image: '/assets/work/2d-portfolio.webp',
-        live: '',
-        github: '',
+        live: 'https://flibouche-2d-portfolio.vercel.app/',
+        github: 'https://github.com/Flibouche/Flibouche-2D-Portfolio',
     },
     {
         num: '05',
         category: 'fullstack',
         title: 'Sessions',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nunc nec ultricies.',
-        stack: [{ name: "Html 5" }, { name: "Css 3" }, { name: "Javascript" }],
+        description: "Ce projet est une application destinée aux administrateurs de centres de formation pour gérer les sessions de formation. L'application permet aux administrateurs de gérer les sessions de formation, les modules, les catégories et les inscriptions des étudiants.",
+        stack: [{ name: "Symfony" }, { name: "TailwindCSS" }, { name: "Flowbite" }],
         image: '/assets/work/sf-sessions.webp',
         live: '',
-        github: '',
+        github: 'https://github.com/Flibouche/SfSessions',
     },
     {
         num: '06',
-        category: 'frontend',
+        category: 'fullstack',
         title: 'CineDune',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nunc nec ultricies.',
-        stack: [{ name: "Html 5" }, { name: "Css 3" }, { name: "Javascript" }],
+        description: "Ce projet 'Film Wiki' est une application web conçue pour gérer des informations sur les films, les acteurs/actrices, les réalisateurs, les rôles et les genres cinématographiques.",
+        stack: [{ name: "PHP 8" }, { name: "Html 5" }, { name: "Css 3" }, { name: "JavaScript" }, { name: "SQL" }],
         image: '/assets/work/cinedune.webp',
         live: '',
-        github: '',
+        github: 'https://github.com/Flibouche/SQL_Cinema',
     },
 ]
 
@@ -123,20 +123,24 @@ const Work = () => {
                             {/* Buttons */}
                             <div className='flex items-center gap-4'>
                                 {/* Live project button */}
-                                <Link href={project.live}>
-                                    <TooltipProvider delayDuration={100}>
-                                        <Tooltip>
-                                            <TooltipTrigger className='w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group'>
-                                                <BsArrowUpRight className='text-white text-3xl group-hover:text-accent' />
-                                            </TooltipTrigger>
-                                            <TooltipContent>
-                                                <p>Live project</p>
-                                            </TooltipContent>
-                                        </Tooltip>
-                                    </TooltipProvider>
-                                </Link>
+                                {project.live ?
+                                    <Link href={project.live} target='_blank'>
+                                        <TooltipProvider delayDuration={100}>
+                                            <Tooltip>
+                                                <TooltipTrigger className='w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group'>
+                                                    <BsArrowUpRight className='text-white text-3xl group-hover:text-accent' />
+                                                </TooltipTrigger>
+                                                <TooltipContent>
+                                                    <p>Live project</p>
+                                                </TooltipContent>
+                                            </Tooltip>
+                                        </TooltipProvider>
+                                    </Link>
+                                    :
+                                    ''
+                                }
                                 {/* Github project button */}
-                                <Link href={project.github}>
+                                <Link href={project.github} target='_blank'>
                                     <TooltipProvider delayDuration={100}>
                                         <Tooltip>
                                             <TooltipTrigger className='w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group'>

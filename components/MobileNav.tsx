@@ -17,7 +17,7 @@ const links = [
     },
     {
         name: 'projets',
-        path: '/work'
+        path: '/projet'
     },
 ];
 
@@ -44,7 +44,8 @@ const MobileNav = () => {
                             <Link
                                 href={link.path}
                                 key={index}
-                                className={`${link.path === pathname && "text-accent border-b-2 border-accent"} text-xl capitalize hover:text-accent transition-all`}
+                                className={`${link.path === pathname && "text-accent border-b-2 border-accent"
+                            } capitalize text-xl font-medium hover:text-accent transition-all relative after:bg-accent after:absolute after:h-0.5 after:w-0 after:top-7 after:left-0 hover:after:w-full after:transition-all after:duration-300 cursor-pointer`}
                             >
                                 {link.name}
                             </Link>
