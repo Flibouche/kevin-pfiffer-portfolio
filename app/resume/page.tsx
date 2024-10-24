@@ -1,23 +1,29 @@
 "use client";
 
-import { FaHtml5, FaCss3, FaJs, FaReact, FaFigma, FaNodeJs, FaBootstrap, FaDocker, FaGithub, FaLaravel, FaTrello, FaFacebook, FaInstagram } from 'react-icons/fa';
-import { FaSquareXTwitter } from 'react-icons/fa6';
-import { SiTailwindcss, SiNextdotjs, SiPhp, SiSymfony, SiObsidian, SiAdobeindesign, SiAdobephotoshop, SiAdobeillustrator, SiAdobelightroom, SiAdobepremierepro } from 'react-icons/si';
-import { PiMouseScrollFill } from "react-icons/pi";
-import { DiMysql, DiMongodb } from "react-icons/di";
-import { VscVscode } from "react-icons/vsc";
 import { motion } from 'framer-motion';
+import Link from 'next/link';
+
+// Icons
+import { FaHtml5, FaCss3, FaJs, FaReact, FaFigma, FaNodeJs, FaBootstrap, FaDocker, FaGithub, FaLaravel, FaTrello, FaFacebook, FaInstagram, FaEye, FaFistRaised, FaHandshake, FaGuitar } from 'react-icons/fa';
+import { SiTailwindcss, SiNextdotjs, SiPhp, SiSymfony, SiObsidian, SiAdobeindesign, SiAdobephotoshop, SiAdobeillustrator, SiAdobelightroom, SiAdobepremierepro, SiAseprite, SiCsharp } from 'react-icons/si';
+import { FaSquareXTwitter, FaArrowsTurnToDots } from 'react-icons/fa6';
+import { IoLogoGameControllerB } from 'react-icons/io';
+import { MdVolunteerActivism } from 'react-icons/md';
+import { DiMysql, DiMongodb } from 'react-icons/di';
+import { PiMouseScrollFill } from 'react-icons/pi';
+import { BsArrowDownRight } from 'react-icons/bs';
+import { VscVscode } from 'react-icons/vsc';
 
 // Components
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
 
 // About data
 const about = {
     icon: '/assets/resume/user.svg',
     title: 'À propos de moi',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam corporis quidem dolore perspiciatis debitis animi nihil culpa voluptate, ut illo.',
+    description: "Je suis un jeune développeur web/mobile passionné par les nouvelles technologies et les jeux vidéo. J'ai une expérience en communication et en événementiel qui me permet de m'adapter rapidement à de nouveaux environnements et de travailler en équipe.",
     info: [
         {
             fieldName: "Nom",
@@ -28,16 +34,52 @@ const about = {
             fieldValue: "moins d'1 an",
         },
         {
-            fieldName: "Nationalité",
-            fieldValue: "Française",
+            fieldName: "Langues",
+            fieldValue: "Français, Anglais",
         },
         {
             fieldName: "Email",
             fieldValue: "kevin.pfiffer2@gmail.com",
         },
+    ],
+    skill: [
         {
-            fieldName: "Langues",
-            fieldValue: "Français, Anglais",
+            icon: <FaEye />,
+            name: 'Curiosité',
+            description: '',
+        },
+        {
+            icon: <FaArrowsTurnToDots />,
+            name: 'Adaptabilité',
+            description: '',
+        },
+        {
+            icon: <FaFistRaised />,
+            name: 'Ténacité',
+            description: '',
+        },
+        {
+            icon: <FaHandshake />,
+            name: 'Aisance relationnelle',
+            description: '',
+        },
+    ],
+    passion: [
+        {
+            icon: <IoLogoGameControllerB />,
+            name: 'Jeux vidéo',
+        },
+        {
+            icon: <FaGuitar />,
+            name: 'Musique',
+        },
+        {
+            icon: <SiAseprite />,
+            name: 'Pixel Art',
+        },
+        {
+            icon: <MdVolunteerActivism />,
+            name: 'Bénévolat',
         },
     ]
 }
@@ -45,8 +87,8 @@ const about = {
 // Experience data
 const experience = {
     icon: '/assets/resume/badge.svg',
-    title: 'Mon expérience',
-    description: "Ancien chargé de communication, j'ai acquis de nombreuses compétences tout au long de ma vie professionnelle.",
+    title: 'Mes expériences',
+    description: "Ancien chargé de communication, j'ai eu la chance d'avoir de nombreuses expériences professionnelles et bénévoles dans des domaines galvanisants.",
     items: [
         {
             company: 'CO2M - Stage',
@@ -80,7 +122,7 @@ const experience = {
 const education = {
     icon: '/assets/resume/cap.svg',
     title: 'Mes formations',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+    description: "Parcours atypique mais riche en connaissances, j'ai suivi des formations variées tout le long de ma vie, ce qui m'a permis d'acquérir des compétences diverses.",
     items: [
         {
             institution: 'Elan Formation - Strasbourg',
@@ -105,11 +147,50 @@ const education = {
     ]
 }
 
+// Certification data
+const certification = {
+    icon: '/assets/resume/award.svg',
+    title: 'Mes certifications',
+    description: "Au cours de ma formation de développeur web et web mobile, j'ai eu l'occasion de suivre des modules de certification en conformité avec le RGPD et freeCodeCamp.",
+    items: [
+        {
+            organism: 'CNIL',
+            certification: 'Module 4: Le DPO et les outils de la conformité',
+            deliverance: 'Septembre 2024',
+            link: 'https://www.linkedin.com/in/kevin-pfiffer/details/certifications/1725288585800/single-media-viewer/?profileId=ACoAACfhG_UBdGlOnY4ORlQwD1ptXTlno2xfYFM',
+        },
+        {
+            organism: 'CNIL',
+            certification: 'Module 3: Les responsabilités des acteurs',
+            deliverance: 'Août 2024',
+            link: 'https://www.linkedin.com/in/kevin-pfiffer/details/certifications/1724832616198/single-media-viewer/?profileId=ACoAACfhG_UBdGlOnY4ORlQwD1ptXTlno2xfYFM'
+        },
+        {
+            organism: 'CNIL',
+            certification: 'Module 2: Les principes de la protection des données',
+            deliverance: 'Août 2024',
+            link: 'https://www.linkedin.com/in/kevin-pfiffer/details/certifications/1724832601485/single-media-viewer/?profileId=ACoAACfhG_UBdGlOnY4ORlQwD1ptXTlno2xfYFM'
+        },
+        {
+            organism: 'CNIL',
+            certification: 'Module 1: Le RGPD et ses notions clés',
+            deliverance: 'Juillet 2024',
+            link: 'https://www.linkedin.com/in/kevin-pfiffer/details/certifications/1720011455940/single-media-viewer/?profileId=ACoAACfhG_UBdGlOnY4ORlQwD1ptXTlno2xfYFM'
+        },
+        {
+            organism: 'freeCodeCamp',
+            certification: 'Responsive Web Design',
+            deliverance: 'Avril 2024',
+            link: 'https://www.linkedin.com/in/kevin-pfiffer/details/certifications/1712058368906/single-media-viewer/?profileId=ACoAACfhG_UBdGlOnY4ORlQwD1ptXTlno2xfYFM',
+        }
+    ]
+}
+
 // Skills data
 const skills = {
     icon: '/assets/resume/gear.svg',
     title: 'Mes compétences',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+    description: "Pendant mon parcours chez Elan Formation, j'ai pu découvrir et pratiquer de nombreux langages et outils de développement. Je développe mes compétences également pendant mon temps libre.",
     skillStructureAndStyle: [
         {
             icon: <FaHtml5 />,
@@ -184,6 +265,10 @@ const skills = {
         {
             icon: <FaLaravel />,
             name: 'Laravel',
+        },
+        {
+            icon: <SiCsharp />,
+            name: 'C#',
         }
     ]
 }
@@ -191,7 +276,7 @@ const skills = {
 const transversalSkills = {
     icon: '/assets/resume/gears.svg',
     title: 'Mes compétences transversales',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+    description: "Je possède également des compétences transversales qui me permettent de m'organiser sur mes projets en plus de mes compétences de communicant.",
     skillModeling: [
         {
             icon: <FaFigma />,
@@ -263,6 +348,7 @@ const Resume = () => {
                     <TabsList className='flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6'>
                         <TabsTrigger value="experience">Expériences</TabsTrigger>
                         <TabsTrigger value="education">Formations</TabsTrigger>
+                        <TabsTrigger value="certification">Certifications</TabsTrigger>
                         <TabsTrigger value="skills">Hard skills</TabsTrigger>
                         <TabsTrigger value="transversal">Tranversal skills</TabsTrigger>
                         <TabsTrigger value="about">À propos de moi</TabsTrigger>
@@ -281,14 +367,7 @@ const Resume = () => {
                                     {experience.description}
                                 </p>
                                 <ScrollArea className="h-[400px]">
-                                    <motion.div animate={{ rotate: [0, 0.7, 0, 0] }}
-                                        transition={{
-                                            duration: 0.5,
-                                            repeat: Infinity,
-                                            ease: 'easeInOut',
-                                        }}>
-                                        <PiMouseScrollFill className='absolute top-5 right-5 h-10 w-10 text-accent' />
-                                    </motion.div>
+                                    <PiMouseScrollFill className='absolute top-5 right-5 h-10 w-10 text-accent animate-bounce' />
                                     <ul className='grid grid-cols-1 lg:grid-cols-2 gap-[30px]'>
                                         {experience.items.map((item, index) => {
                                             return (
@@ -320,14 +399,7 @@ const Resume = () => {
                                     {education.description}
                                 </p>
                                 <ScrollArea className="h-[400px]">
-                                    <motion.div animate={{ rotate: [0, 0.7, 0, 0] }}
-                                        transition={{
-                                            duration: 0.5,
-                                            repeat: Infinity,
-                                            ease: 'easeInOut',
-                                        }}>
-                                        <PiMouseScrollFill className='absolute top-5 right-5 h-10 w-10 text-accent' />
-                                    </motion.div>
+                                    <PiMouseScrollFill className='absolute top-5 right-5 h-10 w-10 text-accent animate-bounce' />
                                     <ul className='grid grid-cols-1 lg:grid-cols-2 gap-[30px]'>
                                         {education.items.map((item, index) => {
                                             return (
@@ -338,6 +410,43 @@ const Resume = () => {
                                                         {/* Dot */}
                                                         <span className='w-[6px] h-[6px] rounded-full bg-accent'></span>
                                                         <p className='text-white/60'>{item.institution}</p>
+                                                    </div>
+                                                </li>
+                                            )
+                                        })}
+                                    </ul>
+                                    <ScrollBar />
+                                </ScrollArea>
+                            </div>
+                        </TabsContent>
+
+                        {/* Certification */}
+                        <TabsContent value='certification' className='w-full'>
+                            <div className='flex flex-col gap-[30px] text-center xl:text-left'>
+                                <div className='flex flex-col justify-center xl:flex-row xl:justify-start gap-3'>
+                                    <img src={certification.icon} alt="Certification Icon" className='h-10' />
+                                    <h3 className='text-4xl font-bold'>{certification.title}</h3>
+                                </div>
+                                <p className='max-w-[600px] text-white/60 mx-auto xl:mx-0'>
+                                    {certification.description}
+                                </p>
+                                <ScrollArea className="h-[400px]">
+                                    <PiMouseScrollFill className='absolute top-5 right-5 h-10 w-10 text-accent animate-bounce' />
+                                    <ul className='grid grid-cols-1 lg:grid-cols-2 gap-[30px]'>
+                                        {certification.items.map((item, index) => {
+                                            return (
+                                                <li key={index} className='bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1'>
+                                                    <span className='text-accent'>{item.deliverance}</span>
+                                                    <h3 className='text-xl max-w-[260px] min-h-[60px] text-center lg:text-left line-clamp-2'>{item.certification}</h3>
+                                                    <div className='flex items-center w-full justify-between'>
+                                                        {/* Dot */}
+                                                        <div className='flex flex-row items-center gap-3'>
+                                                            <span className='w-[6px] h-[6px] rounded-full bg-accent'></span>
+                                                            <p className='text-white/60'>{item.organism}</p>
+                                                        </div>
+                                                        <Link href={item.link} target='_blank' className='group h-10 w-20 p-5 rounded-full bg-white/80 flex justify-center items-center'>
+                                                            <BsArrowDownRight className='text-primary text-3xl group-hover:-rotate-45 transition-all duration-500 group-hover:text-accent' />
+                                                        </Link>
                                                     </div>
                                                 </li>
                                             )
@@ -359,14 +468,7 @@ const Resume = () => {
                                     <p className='max-w-[600px] text-white/60 mx-auto xl:mx-0'>{skills.description}</p>
                                 </div>
                                 <ScrollArea className="h-[400px]">
-                                    <motion.div animate={{ rotate: [0, 0.7, 0, 0] }}
-                                        transition={{
-                                            duration: 0.5,
-                                            repeat: Infinity,
-                                            ease: 'easeInOut',
-                                        }}>
-                                        <PiMouseScrollFill className='absolute top-5 right-5 h-10 w-10 text-accent' />
-                                    </motion.div>
+                                    <PiMouseScrollFill className='absolute top-5 right-5 h-10 w-10 text-accent animate-bounce' />
                                     {/* Structure & Styles */}
                                     <h4>Structure & Styles :</h4>
                                     <ul className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap-[30px]'>
@@ -503,14 +605,7 @@ const Resume = () => {
                                     <p className='max-w-[600px] text-white/60 mx-auto xl:mx-0'>{transversalSkills.description}</p>
                                 </div>
                                 <ScrollArea className="h-[400px]">
-                                    <motion.div animate={{ rotate: [0, 0.7, 0, 0] }}
-                                        transition={{
-                                            duration: 0.5,
-                                            repeat: Infinity,
-                                            ease: 'easeInOut',
-                                        }}>
-                                        <PiMouseScrollFill className='absolute top-5 right-5 h-10 w-10 text-accent' />
-                                    </motion.div>
+                                    <PiMouseScrollFill className='absolute top-5 right-5 h-10 w-10 text-accent animate-bounce' />
                                     {/* Modeling */}
                                     <h4>Maquettage :</h4>
                                     <ul className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap-[30px]'>
@@ -614,6 +709,44 @@ const Resume = () => {
                                     })}
                                 </ul>
                             </div>
+                            <h4 className='mt-5'>Soft skills :</h4>
+                            <ul className='grid grid-cols-2 md:grid-cols-4 gap-4 xl:gap-[30px]'>
+                                {about.skill.map((skill, index) => {
+                                    return (
+                                        <li key={index}>
+                                            <TooltipProvider delayDuration={100}>
+                                                <Tooltip>
+                                                    <TooltipTrigger className='w-full h-[50px] bg-[#232329] rounded-xl flex justify-center items-center group'>
+                                                        <div className='text-3xl group-hover:text-accent transition-all duration-300'>{skill.icon}</div>
+                                                    </TooltipTrigger>
+                                                    <TooltipContent>
+                                                        <p className='capitalize'>{skill.name}</p>
+                                                    </TooltipContent>
+                                                </Tooltip>
+                                            </TooltipProvider>
+                                        </li>
+                                    )
+                                })}
+                            </ul>
+                            <h4 className='mt-5'>Mes passions :</h4>
+                            <ul className='grid grid-cols-2 md:grid-cols-4 gap-4 xl:gap-[30px]'>
+                                {about.passion.map((skill, index) => {
+                                    return (
+                                        <li key={index}>
+                                            <TooltipProvider delayDuration={100}>
+                                                <Tooltip>
+                                                    <TooltipTrigger className='w-full h-[50px] bg-[#232329] rounded-xl flex justify-center items-center group'>
+                                                        <div className='text-3xl group-hover:text-accent transition-all duration-300'>{skill.icon}</div>
+                                                    </TooltipTrigger>
+                                                    <TooltipContent>
+                                                        <p className='capitalize'>{skill.name}</p>
+                                                    </TooltipContent>
+                                                </Tooltip>
+                                            </TooltipProvider>
+                                        </li>
+                                    )
+                                })}
+                            </ul>
                         </TabsContent>
 
                     </div>
