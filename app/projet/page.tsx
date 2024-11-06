@@ -70,7 +70,7 @@ const projects = [
         category: 'fullstack',
         title: 'CineDune',
         description: "Ce projet 'Film Wiki' est une application web conçue pour gérer des informations sur les films, les acteurs/actrices, les réalisateurs, les rôles et les genres cinématographiques.",
-        stack: [{ name: "PHP 8" }, { name: "Html 5" }, { name: "Css 3" }, { name: "JavaScript" }, { name: "SQL" }],
+        stack: [{ name: "PHP 8" }, { name: "HTML 5" }, { name: "CSS 3" }, { name: "JavaScript" }, { name: "SQL" }],
         image: '/assets/work/cinedune.webp',
         live: '',
         github: 'https://github.com/Flibouche/SQL_Cinema',
@@ -107,7 +107,7 @@ const Work = () => {
                             {/* Project description */}
                             <p className='text-white/60'>{project.description}</p>
                             {/* Stack */}
-                            <ul className='flex gap-4'>
+                            <ul className='grid grid-cols-2 gap-4 md:flex'>
                                 {project.stack.map((item, index) => {
                                     return (
                                         <li key={index} className='text-xl text-accent'>
@@ -173,7 +173,7 @@ const Work = () => {
                                                 <Image
                                                     src={project.image}
                                                     fill
-                                                    className='object-cover'
+                                                    className='object-contain'
                                                     alt={project.title}
                                                 />
                                             </div>
