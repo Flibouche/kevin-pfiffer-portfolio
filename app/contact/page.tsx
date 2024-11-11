@@ -11,6 +11,7 @@ import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import Link from "next/link";
 
 const info = [
     {
@@ -120,7 +121,13 @@ const Contact = () => {
                                 placeholder="Que voulez-vous me dire ?"
                             />
                             {/* Buttons */}
-                            <Button size="md" className="max-w-40" type="submit">Envoyer</Button>
+                            <div className="flex flex-col gap-y-5 sm:flex-row justify-between">
+                                <Button size="md" className="max-w-40" type="submit">Envoyer</Button>
+                                <div className="text-white/60 text-sm flex items-center gap-2">
+                                    <input type="checkbox" required className="accent-accent" />
+                                    <span>J'accepte la <Link href='/privacy-policy' className="text-accent underline hover:text-accent-hover">Politique de confidentialité</Link></span>
+                                </div>
+                            </div>
                         </form>
                     </div>
                     {/* Info */}
