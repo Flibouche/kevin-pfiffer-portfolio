@@ -350,7 +350,7 @@ const Resume = () => {
                         <TabsTrigger value="education">Formations</TabsTrigger>
                         <TabsTrigger value="certification">Certifications</TabsTrigger>
                         <TabsTrigger value="skills">Hard skills</TabsTrigger>
-                        <TabsTrigger value="transversal">Tranversal skills</TabsTrigger>
+                        <TabsTrigger value="transversal">Transversal skills</TabsTrigger>
                         <TabsTrigger value="about">À propos de moi</TabsTrigger>
                     </TabsList>
 
