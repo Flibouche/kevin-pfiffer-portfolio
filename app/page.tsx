@@ -8,7 +8,7 @@ import Stats from "@/components/Stats";
 
 const Home = () => {
     return (
-        <section className="h-full">
+        <section className="h-full mb-5 sm:mb-14">
             <div className="container mx-auto">
                 <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24">
                     {/* Text */}
